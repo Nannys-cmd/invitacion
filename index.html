@@ -1,123 +1,158 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-  <meta charset="UTF-8" />
-  <title>80 Años de Chami</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8" />
+    <title>80 Años de Chami</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- Fuentes de Google -->
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <!-- Fuentes de Google -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Montserrat:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
 
-  <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="styles.css" />
 </head>
+
 <body>
-  <!-- HERO -->
-  <header class="hero">
-    <div class="hero-overlay"></div>
-    <div class="hero-content">
-      <p class="hero-subtitle">Estás invitado a celebrar</p>
+    <!-- NAVEGACIÓN SUPERIOR SENCILLA -->
+    <nav class="top-nav">
+        <div class="top-nav-inner">
+            <button type="button" class="top-nav-btn"
+                onclick="document.getElementById('detalles').scrollIntoView({ behavior: 'smooth' });">
+                Información
+            </button>
 
-      <h1 class="hero-title">
-        Los 80 Años de<br>
-        <span class="hero-name">Chami</span>
-      </h1>
+            <button type="button" class="top-nav-btn"
+                onclick="document.getElementById('canasta').scrollIntoView({ behavior: 'smooth' });">
+                Fiesta a la canasta
+            </button>
 
-      <p class="hero-date">Sábado 06 de Diciembre · 12 hs</p>
-      <p class="hero-location">[Nombre del salón / dirección] · Luzuriaga, Maipú</p>
+            <button type="button" class="top-nav-btn"
+                onclick="document.getElementById('rsvp').scrollIntoView({ behavior: 'smooth' });">
+                Confirmar asistencia
+            </button>
+        </div>
+    </nav>
 
-      <div id="countdown" class="countdown"></div>
+    <!-- HERO -->
+    <header class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <p class="hero-subtitle">Estás invitado a celebrar</p>
 
-      <a href="#rsvp" class="btn-primary">Confirmar asistencia</a>
+            <h1 class="hero-title">
+                Los 80 Años de<br>
+                <span class="hero-name">Chami</span>
+            </h1>
+
+            <p class="hero-date">Sábado 06 de Diciembre · 12 hs</p>
+            <p class="hero-location">
+                Quincho familiar · Mallea 3439, Gutiérrez, Maipú, Mendoza
+            </p>
+
+            <div id="countdown" class="countdown"></div>
+
+            <a href="#rsvp" class="btn-primary">Confirmar asistencia</a>
+        </div>
+    </header>
+
+    <!-- SECCIÓN HISTORIA -->
+    <section class="section" id="historia">
+        <div class="section-inner">
+            <h2>Una vida para celebrar</h2>
+            <p>
+                Este año Chami cumple 80 años y queremos reunir a la familia
+                y amigos para agradecer por tantos momentos compartidos.
+            </p>
+            <p>
+                Nos encantaría que nos acompañes en este día especial lleno de
+                recuerdos, abrazos y mucho amor.
+            </p>
+        </div>
+    </section>
+
+    <!-- DETALLES DEL EVENTO -->
+    <section class="section section-light" id="detalles">
+        <div class="section-inner details-grid">
+            <div class="detail-card">
+                <h3>Cuándo</h3>
+                <p>Sábado 06 de Diciembre de 2025</p>
+                <p>12 hs</p>
+            </div>
+
+            <div class="detail-card">
+                <h3>Dónde</h3>
+                <p>La Lupe Salón de Eventos</p>
+                <p>Mallea 3439, Gutiérrez, Maipú, Mendoza</p>
+
+                <!-- Botón para ver la ubicación en Google Maps -->
+                <a href="https://maps.app.goo.gl/n8FcxqVGCtiFxQNp6" class="btn-maps" target="_blank"
+                    rel="noopener noreferrer">
+                    Ver ubicación
+                </a>
+
+            </div>
+
+            <div class="detail-card">
+                <h3>Código de vestimenta</h3>
+                <p>Informal</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN CANASTA -->
+    <section class="section" id="canasta">
+        <div class="section-inner canasta-box">
+            <h2>Fiesta a la Canasta</h2>
+            <p>
+                Como esta celebración es entre familia y personas queridas,
+                queremos compartir un mediodía sencillo y lleno de cariño.
+            </p>
+            <p>
+                Si te nace, podés traer algo rico para sumar a la mesa:
+                un plato salado, algo dulce, bebidas… lo que quieras.
+            </p>
+            <p>
+                No es obligación, lo importante es que vengas a disfrutar con nosotros 💛
+            </p>
+        </div>
+    </section>
+
+    <!-- RSVP -->
+    <section class="section" id="rsvp">
+        <div class="section-inner rsvp-box">
+            <h2>Confirmá tu asistencia</h2>
+            <p>
+                Para poder organizarnos mejor, te pedimos que nos confirmes tu asistencia
+                antes del <strong>30 de Noviembre</strong>.
+            </p>
+
+            <a class="btn-primary"
+                href="https://wa.me/5492616013999?text=Hola%20Daniela%2C%20quiero%20confirmar%20mi%20asistencia%20al%20cumple%20de%20Chami"
+                target="_blank" rel="noopener noreferrer">
+                Confirmar por WhatsApp
+            </a>
+
+            <p class="rsvp-note">
+                Si necesitás aclarar algo sobre el menú, movilidad u otra cosa,
+                escribinos por WhatsApp 💬
+            </p>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <p>Con mucho amor,</p>
+        <p>Daniela y familia 💕</p>
+    </footer>
+
+    <!-- BOTÓN FIJO EN CELULAR PARA CONFIRMAR -->
+    <div class="mobile-cta">
+        <a href="#rsvp" class="mobile-cta-btn">Confirmar asistencia</a>
     </div>
-  </header>
 
-  <!-- SECCIÓN HISTORIA -->
-  <section class="section" id="historia">
-    <div class="section-inner">
-      <h2>Una vida para celebrar</h2>
-      <p>
-        Este año Chami cumple 80 años y queremos reunir a la familia
-        y amigos para agradecer por tantos momentos compartidos.
-      </p>
-      <p>
-        Nos encantaría que nos acompañes en este día especial lleno de
-        recuerdos, abrazos y mucho amor.
-      </p>
-    </div>
-  </section>
-
-  <!-- DETALLES DEL EVENTO -->
-  <section class="section section-light" id="detalles">
-    <div class="section-inner details-grid">
-      <div class="detail-card">
-        <h3>Cuándo</h3>
-        <p>Sábado 06 de Diciembre de 2025</p>
-        <p>12 hs</p>
-      </div>
-
-      <div class="detail-card">
-        <h3>Dónde</h3>
-        <p>[Nombre del salón]</p>
-        <p>[Dirección completa]</p>
-      </div>
-
-      <div class="detail-card">
-        <h3>Código de vestimenta</h3>
-        <p>Informal</p>
-      </div>
-    </div>
-  </section>
-
-<!-- SECCIÓN CANASTA -->
-<section class="section" id="canasta">
-  <div class="section-inner canasta-box">
-    <h2>Fiesta a la Canasta</h2>
-    <p>
-      Como esta celebración es entre familia y personas queridas,
-      queremos compartir un mediodía sencillo y lleno de cariño.
-    </p>
-    <p>
-      Si te nace, podés traer algo rico para sumar a la mesa:
-      un plato salado, algo dulce, bebidas… lo que quieras.
-    </p>
-    <p>
-      No es obligación, lo importante es que vengas a disfrutar con nosotros 💛
-    </p>
-  </div>
-</section>
-
-  <!-- RSVP -->
-  <section class="section" id="rsvp">
-    <div class="section-inner rsvp-box">
-      <h2>Confirmá tu asistencia</h2>
-      <p>
-        Para poder organizarnos mejor, te pedimos que nos confirmes tu asistencia
-        antes del <strong>30 de Noviembre</strong>.
-      </p>
-
-      <a
-        class="btn-primary"
-        href="https://wa.me/5492616013999?text=Hola%20Daniela%2C%20quiero%20confirmar%20mi%20asistencia%20al%20cumple%20de%20Chami"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Confirmar por WhatsApp
-      </a>
-
-      <p class="rsvp-note">
-        Si necesitás aclarar algo sobre el menú, movilidad u otra cosa,
-        escribinos por WhatsApp 💬
-      </p>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer class="footer">
-    <p>Con mucho amor,</p>
-    <p>Daniela y familia 💕</p>
-  </footer>
-
-  <script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
-</html>
 
+</html>
