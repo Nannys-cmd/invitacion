@@ -19,16 +19,63 @@
   box-sizing: border-box;
 }
 
-html,
-body {
+html {
   height: 100%;
+  scroll-behavior: smooth;
 }
 
 body {
+  height: 100%;
   font-family: "Montserrat", system-ui, -apple-system, BlinkMacSystemFont,
     "Segoe UI", sans-serif;
   background: radial-gradient(circle at top, #14121f 0, #050509 55%);
   color: var(--text-main);
+  font-size: 17px;
+}
+
+/* ========= NAVEGACIÓN SUPERIOR ========= */
+.top-nav {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(5, 5, 9, 0.96);
+  border-bottom: 1px solid rgba(212, 175, 55, 0.25);
+  backdrop-filter: blur(10px);
+}
+
+.top-nav-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0.4rem 1rem;
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.top-nav-btn {
+  flex: 1 1 auto;
+  min-width: 130px;
+  padding: 0.55rem 0.9rem;
+  border-radius: 999px;
+  border: 1px solid rgba(212, 175, 55, 0.6);
+  background: rgba(17, 16, 26, 0.9);
+  color: var(--gold-soft);
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  cursor: pointer;
+  transition: 0.15s ease;
+}
+
+.top-nav-btn:focus {
+  outline: none;
+}
+
+.top-nav-btn:hover {
+  background: rgba(212, 175, 55, 0.16);
 }
 
 /* ========= HERO ========= */
@@ -113,7 +160,7 @@ body {
   color: var(--text-muted);
 }
 
-/* ========= BOTÓN ========= */
+/* ========= BOTÓN PRINCIPAL ========= */
 .btn-primary {
   display: inline-block;
   margin-top: 1.2rem;
@@ -195,6 +242,7 @@ body {
   color: var(--gold);
 }
 
+/* ========= BOTÓN MAPS ========= */
 .btn-maps {
   display: inline-block;
   margin-top: 1rem;
@@ -227,7 +275,7 @@ body {
   border-color: var(--gold);
 }
 
-/* Estilo especial para la sección Canasta */
+/* ========= SECCIÓN CANASTA ========= */
 .canasta-box {
   border: 1px solid rgba(212, 175, 55, 0.25);
   padding: 2.2rem 1.8rem;
@@ -278,6 +326,86 @@ body {
   margin-bottom: 0.2rem;
 }
 
+/* ========= BOTÓN FIJO EN CELULAR ========= */
+.mobile-cta {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 0.5rem 1rem 0.8rem;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.95),
+    rgba(0, 0, 0, 0.7)
+  );
+  display: none;
+  z-index: 60;
+}
+
+.mobile-cta-btn {
+  display: block;
+  width: 100%;
+  text-align: center;
+  padding: 0.85rem 1rem;
+  border-radius: 999px;
+  border: 1px solid rgba(212, 175, 55, 0.8);
+  background-image: linear-gradient(
+    135deg,
+    #b8962b,
+    #e2c15a,
+    #b8962b
+  );
+  background-size: 200% 200%;
+  color: #1a130a;
+  font-weight: 700;
+  font-size: 0.9rem;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.85);
+}
+
+/* ========= BOTÓN FLECHA VOLVER ARRIBA ========= */
+.scroll-top {
+  position: fixed;
+  right: 1.2rem;
+  bottom: 1.5rem;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 1px solid rgba(212, 175, 55, 0.8);
+  background: rgba(8, 7, 15, 0.95);
+  color: var(--gold-soft);
+  font-size: 1.3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.7);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease, transform 0.2s ease, background 0.2s ease;
+  z-index: 65;
+}
+
+.scroll-top:hover {
+  transform: translateY(-2px);
+  background: rgba(212, 175, 55, 0.18);
+}
+
+/* Se muestra cuando el usuario baja */
+.scroll-top--visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* En móvil la subimos un poquito para que no choque con el botón de confirmar */
+@media (max-width: 768px) {
+  .scroll-top {
+    bottom: 4.5rem;
+  }
+}
+
 /* ========= RESPONSIVE ========= */
 @media (max-width: 768px) {
   .hero-title {
@@ -285,6 +413,14 @@ body {
   }
   .hero-name {
     font-size: 2.5rem;
+  }
+
+  .mobile-cta {
+    display: block;
+  }
+
+  .footer {
+    padding-bottom: 3.3rem; /* para que no lo tape el botón fijo */
   }
 }
 
